@@ -41,7 +41,7 @@ public class UserServiceImp implements UserService{
         userDao.deleteUser(id);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     @Override
     public User getUserById(long id) {
         return userDao.getUserById(id);
