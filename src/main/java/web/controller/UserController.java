@@ -25,7 +25,7 @@ public class UserController {
     }
 
     @GetMapping("/new")
-    public String gatAddPage(ModelMap model) {
+    public String getPageToAddNewUser(ModelMap model) {
         model.addAttribute("user", new User());
         return "new";
     }
@@ -37,7 +37,7 @@ public class UserController {
     }
 
     @GetMapping("/update/{id}")
-    public String getUpdatePage(ModelMap model, @PathVariable("id") long id) {
+    public String getPageToUpdateUser(ModelMap model, @PathVariable("id") long id) {
         model.addAttribute("user", userService.getUserById(id));
         return "update";
     }
